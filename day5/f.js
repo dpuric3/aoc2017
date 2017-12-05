@@ -1077,7 +1077,7 @@ const maze = `0
 -316
 -732`;
 
-var num = maze.split('\n').map(x => parseInt(x, 10));
+var num = Int16Array.from(maze.split('\n').map(x => parseInt(x, 10)));
 
 
 function part2timed(arrayNum) {
