@@ -1074,9 +1074,9 @@ function part2(arrayNum) {
 
 	var i = 0;
 
-	for (; i < num.length;) {
+	for (; i < arrayNum.length;) {
 		// console.log('current index is ', i);
-		var currentNum = num[i];
+		var currentNum = arrayNum[i];
 		// console.log('current number is ' + currentNum + ' at index ' + i);
 		// console.log('checking index ', i);
 		var incrementedNum;
@@ -1085,7 +1085,7 @@ function part2(arrayNum) {
 		} else {
 			incrementedNum = currentNum + 1;
 		}
-		num[i] = incrementedNum;
+		arrayNum[i] = incrementedNum;
 		// console.log('incrementing current index ', incrementedNum);
 		var newIndex = i + currentNum;
 		// console.log('new index is ' + i + ' + ' + parseInt(currentNum, 10) + ' = ' + newIndex);
@@ -1094,28 +1094,36 @@ function part2(arrayNum) {
 		steps++;
 	}
 
-	console.log('steps taken ' ,steps);
+	return steps;
 }
 
 
 function part2timed(arrayNum) {
 	var steps = 0;
+
 	var i = 0;
-	for (; i < num.length;) {
-		if (num[i] >= 3) {
-			num[i] = num[i] - 1;
+
+	for (; i < arrayNum.length;) {
+		var n = arrayNum[i];
+		if (n >= 3) {
+			arrayNum[i] = n - 1;
 		} else {
-			num[i] = num[i] + 1;
+			arrayNum[i] = n + 1;
 		}
-		i = i + num[i];
+		i = i + n;
 		steps++;
 	}
 
-	console.log('steps taken ' ,steps);
+	return steps;
 }
+
+// console.time('part2');
+// var part2s = part2(num);
+// console.timeEnd('part2');
+// console.log('steps taken ' ,part2s);
 
 // var t0 = performance.now();
 console.time('part2timed');
-part2timed(num);
+var steps = part2timed(num);
 console.timeEnd('part2timed');
-// console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
+console.log('steps taken ' ,steps);
