@@ -1100,9 +1100,7 @@ function part2(arrayNum) {
 
 function part2timed(arrayNum) {
 	var steps = 0;
-
 	var i = 0;
-
 	for (; i < arrayNum.length;) {
 		var n = arrayNum[i];
 		if (n >= 3) {

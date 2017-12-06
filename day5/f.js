@@ -1077,16 +1077,16 @@ const maze = `0
 -316
 -732`;
 
-var num = Int16Array.from(maze.split('\n').map(x => parseInt(x, 10)));
+let num = Int16Array.from(maze.split('\n').map(x => parseInt(x, 10)));
 
 
 function part2timed(arrayNum) {
-	var steps = 0;
+	let steps = 0;
 
-	var i = 0;
+	let i = 0;
 
 	for (; i < arrayNum.length;) {
-		var n = arrayNum[i];
+		let n = arrayNum[i];
 		if (n >= 3) {
 			arrayNum[i] = n - 1;
 		} else {
