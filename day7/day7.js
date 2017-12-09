@@ -1914,6 +1914,11 @@ function findBottomNode(unsortedTree) {
 }
 
 
+function findUnbalancedNode(unsortedTree, bottomNode) {
+	
+}
+
+
 var tree = createUnsortedTreeArray(treeString);
 var bottomNode = findBottomNode(tree);
 console.log(bottomNode);
